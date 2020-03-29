@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceriesshopping/components/cart_item.dart';
 import 'package:groceriesshopping/components/staggered_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,14 +14,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height - 44,
             width: MediaQuery.of(context).size.width,
             color: Colors.black,
             child: Stack(
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(top: 10, left: 20, right: 20),
-                  height: MediaQuery.of(context).size.height - 150,
+                  height: MediaQuery.of(context).size.height - 144,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
@@ -50,14 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Container(
                         padding: EdgeInsets.only(bottom: 10),
-                        height: MediaQuery.of(context).size.height - 200,
+                        height: MediaQuery.of(context).size.height - 184,
                         width: MediaQuery.of(context).size.width,
                         child: ListView(
                           children: <Widget>[
-                            MyStaggeredGridView(),
-                            SizedBox(height: 15,),
-                            MyStaggeredGridView(),
-                            SizedBox(height: 15,),
                             MyStaggeredGridView(),
                           ],
                         ),
@@ -69,7 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   alignment: Alignment.bottomCenter,
                   child: Expanded(
                     child: Container(
-                      padding: EdgeInsets.only(left: 20, right: 20, bottom: 50),
+                      color: Colors.black,
+                      padding: EdgeInsets.only(left: 20, right: 20,),
                       height: 100,
                       child: Row(
                         children: <Widget>[
@@ -89,6 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 50,
                                   width: 50,
                                   decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('images/organic.jpg'),
+                                    ),
                                     borderRadius: BorderRadius.circular(25),
                                     color: Colors.white,
                                   ),
@@ -121,9 +122,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 30, 10),
-            height: 500,
+            padding: EdgeInsets.only(left: 25, right: 25),
             color: Colors.black,
+            height: MediaQuery.of(context).size.height/2 + 300,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -135,6 +136,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 25
                   ),
                 ),
+                SizedBox(height: 35,),
+               CartItem(),
+                SizedBox(height: 25,),
+                CartItem(),
+                SizedBox(height: 25,),
+                CartItem(),
+                SizedBox(height: 25,),
+                CartItem(),
+
+                SizedBox(height: 40,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -146,8 +157,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white
                       ),
+                      child: Icon(Icons.directions_car, color: Colors.orangeAccent,),
                     ),
-                    SizedBox(width: 20,),
+                    SizedBox(width: 50,),
                     Expanded(
                       child: Column(
                         children: <Widget>[
@@ -199,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: 40,),
                 Container(
-                  height: 55,
+                  height: 60,
                   decoration: BoxDecoration(
                     color: Colors.orangeAccent,
                     borderRadius: BorderRadius.circular(30),

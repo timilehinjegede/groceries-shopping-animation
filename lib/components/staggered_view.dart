@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceriesshopping/components/product.dart';
 import 'package:groceriesshopping/screens/detail.dart';
 
 class MyStaggeredGridView extends StatelessWidget {
@@ -16,120 +17,18 @@ class MyStaggeredGridView extends StatelessWidget {
                 children: <Widget>[
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Hero(
-                              tag: 'image',
-                              child: Image(
-                                image: AssetImage('images/organic.jpg'),
-                                fit: BoxFit.cover,
-                                height: 100,
-                                width: 70,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                           '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                         ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      padding: EdgeInsets.only(left: 15),
-
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                 ],
               ),
@@ -138,118 +37,18 @@ class MyStaggeredGridView extends StatelessWidget {
                   SizedBox(height: 30,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      padding: EdgeInsets.only(left: 15),
-
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      padding: EdgeInsets.only(left: 15),
-
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
 
                 ],
@@ -263,118 +62,18 @@ class MyStaggeredGridView extends StatelessWidget {
                 children: <Widget>[
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child:Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child:Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                 ],
               ),
@@ -383,118 +82,18 @@ class MyStaggeredGridView extends StatelessWidget {
                   SizedBox(height: 30,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                 ],
               ),
@@ -507,118 +106,18 @@ class MyStaggeredGridView extends StatelessWidget {
                 children: <Widget>[
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                 ],
               ),
@@ -627,118 +126,18 @@ class MyStaggeredGridView extends StatelessWidget {
                   SizedBox(height: 30,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 250,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(5.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                   SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DetailScreen()));
+                      Navigator.push(context, createRoute());
                     },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 15),
-
-                      width: MediaQuery.of(context).size.width / 2 - 25,
-                      height: 260,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(15.0)),
-                        color: Colors.grey[200],
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30.0),
-                            child: Image(
-                              image: AssetImage('images/organic.jpg'),
-                              fit: BoxFit.cover,
-                              height: 100,
-                              width: 70,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            '\$7.99',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          Text(
-                            'Sèggiano Organic\nTagliatelle',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '500g',
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ProductItem(),
                   ),
                 ],
               ),
@@ -748,4 +147,22 @@ class MyStaggeredGridView extends StatelessWidget {
       ),
     );
   }
+  Route createRoute() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => DetailScreen(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        var begin = Offset(0.0, 1.0);
+        var end = Offset.zero;
+        var curve = Curves.ease;
+
+        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
+  }
+
 }

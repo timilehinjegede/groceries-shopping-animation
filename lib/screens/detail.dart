@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceriesshopping/screens/home.dart';
 
 class DetailScreen extends StatefulWidget {
 
@@ -27,14 +28,11 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Icon(Icons.arrow_back_ios, size: 20, color: Colors.black,)
             ),
             SizedBox(height: 30,),
-            Hero(
-              tag: 'image',
-              child: Image(
-                height: 280,
-                width: 340,
-                image: AssetImage('images/organic.jpg'),
-                fit: BoxFit.cover,
-              ),
+            Image(
+              height: 280,
+              width: 340,
+              image: AssetImage('images/organic.jpg'),
+              fit: BoxFit.cover,
             ),
             SizedBox(height: 20,),
             Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceriesshopping/components/cart_item.dart';
 import 'package:groceriesshopping/components/staggered_view.dart';
+import 'package:groceriesshopping/screens/detail.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -233,4 +234,5 @@ class _HomeScreenState extends State<HomeScreen> {
       )
     );
   }
+
 }

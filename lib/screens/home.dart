@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceriesshopping/components/cart_item.dart';
+import 'package:groceriesshopping/components/product.dart';
 import 'package:groceriesshopping/components/staggered_view.dart';
 import 'package:groceriesshopping/screens/detail.dart';
 
@@ -9,6 +10,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  int totalCartNumber = 0;
+  List<int> itemIndicatorList = [];
+  List<int> quantityList = [];
+  int quantityListIndex = -1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +63,256 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: MediaQuery.of(context).size.width,
                         child: ListView(
                           children: <Widget>[
-                            MyStaggeredGridView(),
+                            Container(
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          GestureDetector(
+                                            onTap: () async {
+                                             final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                quantityList.add(result);
+                                                quantityListIndex++;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          SizedBox(height: 30,),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          SizedBox(height: 30,),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          SizedBox(height: 30,),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                          SizedBox(
+                                            height: 25.0,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              final result = await Navigator.push(
+                                                context,
+                                                createRoute(),
+                                              );
+                                              setState(() {
+                                                //update the text
+                                                totalCartNumber = totalCartNumber + result;
+                                                //update the containers
+                                                itemIndicatorList.add(1);
+                                              });
+                                            },
+                                            child: ProductItem(),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -83,19 +339,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(width: 30,),
                           Expanded(
                             child: Row(
-                              children: <Widget>[
-                                Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage('images/organic.jpg'),
-                                    ),
-                                    borderRadius: BorderRadius.circular(25),
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
+                              children: createChildren(),
+                              mainAxisSize: MainAxisSize.min,
                             ),
                           ),
                           Container(
@@ -107,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Center(
                               child: Text(
-                                '1',
+                                totalCartNumber.toString(),
                                 style: TextStyle(
                                   color: Colors.black,
                                 ),
@@ -137,15 +382,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 25
                   ),
                 ),
-                SizedBox(height: 35,),
-               CartItem(),
-                SizedBox(height: 25,),
-                CartItem(),
-                SizedBox(height: 25,),
-                CartItem(),
-                SizedBox(height: 25,),
-                CartItem(),
-
+                Column(
+                  children: createCartItems(),
+                ),
                 SizedBox(height: 40,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,6 +472,85 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       )
     );
+  }
+
+  Route createRoute() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => DetailScreen(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        var begin = Offset(0.0, 1.0);
+        var end = Offset.zero;
+        var curve = Curves.ease;
+
+        var tween = Tween(begin: begin, end: end).chain(
+            CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
+  }
+
+  List<Widget> createChildren() {
+    return new List<Widget>.generate(itemIndicatorList.length, (int index) {
+      return Row(
+        children: <Widget>[
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/organic.jpg'),
+              ),
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(width: 10,),
+        ],
+      );
+    });
+  }
+
+  List<Widget> createCartItems() {
+    return new List<Widget>.generate(itemIndicatorList.length, (int index) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/organic.jpg'),
+              ),
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            '${quantityList[index]} x',
+            style: TextStyle(
+                color: Colors.white
+            ),
+          ),
+          Text(
+            'Sèggiano Organic \nTagliatelle',
+            style: TextStyle(
+                color: Colors.white
+            ),
+          ),
+          Text(
+            '\$4.99',
+            style: TextStyle(
+                color: Colors.white
+            ),
+          ),
+        ],
+      );
+    });
   }
 
 }

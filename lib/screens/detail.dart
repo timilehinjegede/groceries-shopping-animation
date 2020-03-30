@@ -140,7 +140,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 Expanded(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.pop(context);
+                      Navigator.pop(context,number);
                     },
                     child: Container(
                       height: 50,

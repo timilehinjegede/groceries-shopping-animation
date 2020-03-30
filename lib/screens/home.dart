@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceriesshopping/components/cart_item.dart';
 import 'package:groceriesshopping/components/product.dart';
-import 'package:groceriesshopping/components/staggered_view.dart';
 import 'package:groceriesshopping/screens/detail.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -81,7 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
                                                 quantityList.add(result);
+                                                //increase quantitylist index
                                                 quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
@@ -101,6 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -121,6 +125,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -139,6 +147,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -164,6 +176,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -182,6 +198,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -202,6 +222,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -220,6 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -244,6 +272,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -262,6 +294,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -282,6 +318,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -300,6 +340,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               setState(() {
                                                 //update the text
                                                 totalCartNumber = totalCartNumber + result;
+                                                //add the number of items selected from detail screen
+                                                quantityList.add(result);
+                                                //increase quantitylist index
+                                                quantityListIndex++;
                                                 //update the containers
                                                 itemIndicatorList.add(1);
                                               });
@@ -382,10 +426,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 25
                   ),
                 ),
+                SizedBox(height: 30,),
                 Column(
                   children: createCartItems(),
                 ),
-                SizedBox(height: 40,),
+                SizedBox(height: 30,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -516,38 +561,43 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> createCartItems() {
     return new List<Widget>.generate(itemIndicatorList.length, (int index) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return Column(
         children: <Widget>[
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/organic.jpg'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/organic.jpg'),
+                  ),
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.white,
+                ),
               ),
-              borderRadius: BorderRadius.circular(25),
-              color: Colors.white,
-            ),
+              Text(
+                '${quantityList[index]} x',
+                style: TextStyle(
+                    color: Colors.white
+                ),
+              ),
+              Text(
+                'Sèggiano Organic \nTagliatelle',
+                style: TextStyle(
+                    color: Colors.white
+                ),
+              ),
+              Text(
+                '\$4.99',
+                style: TextStyle(
+                    color: Colors.white
+                ),
+              ),
+            ],
           ),
-          Text(
-            '${quantityList[index]} x',
-            style: TextStyle(
-                color: Colors.white
-            ),
-          ),
-          Text(
-            'Sèggiano Organic \nTagliatelle',
-            style: TextStyle(
-                color: Colors.white
-            ),
-          ),
-          Text(
-            '\$4.99',
-            style: TextStyle(
-                color: Colors.white
-            ),
-          ),
+          SizedBox(height: 20,),
         ],
       );
     });

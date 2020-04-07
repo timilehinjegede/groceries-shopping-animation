@@ -365,46 +365,51 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Expanded(
-                    child: Container(
-                      color: Colors.black,
-                      padding: EdgeInsets.only(left: 20, right: 20,),
-                      height: 100,
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            'Cart',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(width: 30,),
-                          Expanded(
-                            child: Row(
-                              children: createChildren(),
-                              mainAxisSize: MainAxisSize.min,
-                            ),
-                          ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25),
-                              color: Colors.yellow,
-                            ),
-                            child: Center(
-                              child: Text(
-                                totalCartNumber.toString(),
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          color: Colors.black,
+                          padding: EdgeInsets.only(left: 20, right: 20,),
+                          height: 100,
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                'Cart',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
                                 ),
                               ),
-                            ),
+                              SizedBox(width: 30,),
+                              Row(
+                                children: createChildren(),
+                                mainAxisSize: MainAxisSize.min,
+                              ),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  color: Colors.yellow,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    totalCartNumber.toString(),
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -412,10 +417,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 25, right: 25),
+            padding: EdgeInsets.only(left: 25, right: 25, bottom: 60),
             color: Colors.black,
-            height: MediaQuery.of(context).size.height/2 + 300,
-            child: Column(
+             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(

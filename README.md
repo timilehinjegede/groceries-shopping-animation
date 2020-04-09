@@ -2,6 +2,18 @@
 
 A new Flutter application.
 
+# Home Screen
+![Home Screen](screenshots/home0.png) 
+
+# Product Screen
+![Product Screen](screenshots/product.png)
+
+# Cart Screen
+![Cart Screen](screenshots/cart.png) 
+
+# Home Screen
+![Home Screen](screenshots/home1.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
